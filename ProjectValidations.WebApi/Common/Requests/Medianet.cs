@@ -5,14 +5,15 @@ public class Medianet : PeticionBase
     public string? Secuencia { get; set; }
     
     // Constructor que recibe los 6 parámetros y los pasa al constructor base
-    private Medianet(string? adquiriente, string? proceso, decimal totalBase, decimal totalIva, decimal totalDescuento, decimal total)
-        : base(adquiriente, proceso, totalBase, totalIva, totalDescuento, total)
+    private Medianet(string? proveedor, string? adquiriente, string? proceso, decimal totalBase, decimal totalIva, decimal totalDescuento, decimal total)
+        : base(proveedor, adquiriente, proceso, totalBase, totalIva, totalDescuento, total)
     {
     }
 
     public static Medianet Create(PeticionBase peticion)
     {
         var medianet = new Medianet(
+            peticion.Proveedor,
             peticion.Adquiriente,
             peticion.Proceso,
             peticion.TotalBase,

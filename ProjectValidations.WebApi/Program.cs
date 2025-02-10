@@ -19,7 +19,8 @@ builder.Services.AddFluentValidationAutoValidation();
 // registrar interfaces
 builder.Services.AddScoped<IOrquestadorService, OrquestadorService>();
 builder.Services.AddScoped<IPeticion, PeticionBase>();
-
+builder.Services.AddScoped<IPeticionFactory, PeticionFactory>();
+builder.Services.AddScoped<IProveedorCreator, MedianetCreator>();
 
 builder.Services.AddSwaggerGen();
 

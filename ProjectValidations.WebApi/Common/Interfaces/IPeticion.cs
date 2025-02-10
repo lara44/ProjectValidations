@@ -2,6 +2,7 @@ namespace ProjectValidations;
 
 public interface IPeticion
 {
+    public string? Proveedor { get; set; }
     public string? Adquiriente { get; set; }
     public string? Proceso { get; set; }
     public decimal TotalBase { get; set; }

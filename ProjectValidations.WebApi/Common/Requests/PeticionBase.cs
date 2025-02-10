@@ -2,6 +2,7 @@ namespace ProjectValidations;
 
 public class PeticionBase : IPeticion
 {
+    public string? Proveedor { get; set; }
     public string? Adquiriente { get; set; }
     public string? Proceso { get; set; }
     public decimal TotalBase { get; set; }
@@ -10,8 +11,16 @@ public class PeticionBase : IPeticion
     public decimal Total { get; set; }
     public Dictionary<string, object>? CamposAdicionales { get; set; }
 
-    public PeticionBase(string? adquiriente, string? proceso, decimal totalBase, decimal totalIva, decimal totalDescuento, decimal total)
+    public PeticionBase(
+        string? proveedor,
+        string? adquiriente,
+        string? proceso,
+        decimal totalBase, 
+        decimal totalIva, 
+        decimal totalDescuento, 
+        decimal total)
     {
+        Proveedor = proveedor;
         Adquiriente = adquiriente;
         Proceso = proceso;
         TotalBase = totalBase;
